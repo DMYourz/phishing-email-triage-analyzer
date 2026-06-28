@@ -1,0 +1,7 @@
+# Keep generated sample triage reports out of GitHub's language statistics,
+# so the language bar reflects the actual source (Python), not the HTML reports.
+reports/** linguist-documentation
+*.html linguist-documentation
+
+# Treat .eml fixtures as plain text (don't let them skew language detection)
+samples/*.eml linguist-language=Text linguist-documentation
