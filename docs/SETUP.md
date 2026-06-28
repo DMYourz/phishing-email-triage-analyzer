@@ -61,7 +61,7 @@ python -m phishtriage analyze suspicious.eml --enrich
 
 You don't need to `cd` into the project every time.
 
-**Option A — global command.** After `pip install -e .` once, the `phishtriage`
+**Option A - global command.** After `pip install -e .` once, the `phishtriage`
 command is on your PATH and works from any folder:
 
 ```powershell
@@ -69,11 +69,11 @@ phishtriage analyze "C:\Users\Daniel\Downloads\weird-email.eml"
 phishtriage batch "C:\Users\Daniel\Downloads\suspicious-emails\" -o reports
 ```
 
-**Option B — drag-and-drop.** Drag any `.eml` file onto **`scan.bat`** in the
+**Option B - drag-and-drop.** Drag any `.eml` file onto **`scan.bat`** in the
 project folder. It analyzes the file, writes reports, and opens the HTML report
 in your browser. You can drag a whole folder too. (Works even without installing.)
 
-**Option C — right-click "Send to".** Make `scan.bat` reachable from the right-click
+**Option C - right-click "Send to".** Make `scan.bat` reachable from the right-click
 menu: press `Win+R`, run `shell:sendto`, and drop a shortcut to `scan.bat` in there.
 Now you can right-click any `.eml` → **Send to → Phishing Scanner**.
 
@@ -81,17 +81,17 @@ Now you can right-click any `.eml` → **Send to → Phishing Scanner**.
 
 | Score | Verdict | What to do |
 |-------|---------|------------|
-| 0–14 | 🟢 Benign | Deliver; keep for baseline tuning |
-| 15–39 | 🟡 Suspicious | Review; confirm sender out-of-band |
-| 40–74 | 🟠 Likely Phishing | Quarantine, warn recipient, hunt for copies |
+| 0-14 | 🟢 Benign | Deliver; keep for baseline tuning |
+| 15-39 | 🟡 Suspicious | Review; confirm sender out-of-band |
+| 40-74 | 🟠 Likely Phishing | Quarantine, warn recipient, hunt for copies |
 | 75+ | 🔴 High-Confidence Phishing | Block, purge from mailboxes, open an incident |
 
 Each report lists exactly which rules fired, their weights, and the MITRE ATT&CK
-technique — so you can see the reasoning, not just the number. See
+technique - so you can see the reasoning, not just the number. See
 [DETECTIONS.md](DETECTIONS.md) for the full rule reference.
 
 ## Using your own emails
 
 In most mail clients, "Save As" or "Show original → download" gives you a `.eml`.
-Drop it anywhere and point the tool at it. Keep real evidence out of the repo —
+Drop it anywhere and point the tool at it. Keep real evidence out of the repo -
 `.gitignore` already excludes `*.local.eml` and `private-samples/`.

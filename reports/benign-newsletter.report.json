@@ -1,6 +1,6 @@
 {
   "tool": "phishtriage",
-  "generated": "2026-06-28 22:03:31 UTC",
+  "generated": "2026-06-28 23:19:13 UTC",
   "file": "samples/benign-newsletter.eml",
   "verdict": "Benign",
   "score": 0,

@@ -11,7 +11,7 @@ The "malicious" attachment is a plain-text placeholder.
 | `benign-internal-it.eml` | ✅ Legit | Internal notice, no risky indicators | 🟢 Benign (0) |
 | `phish-credential-harvest.eml` | ❌ Phish | Homoglyph sender `micros0ft.com` + link-text/href mismatch to `.ru` | 🔴 High (128) |
 | `phish-invoice-malware.eml` | ❌ Phish | Double-extension attachment `Invoice_90871.pdf.iso` + invoice fraud | 🔴 High (119) |
-| `phish-bec-ceo-wire.eml` | ❌ Phish | BEC/CEO wire fraud — clean auth, no links, Reply-To redirect | 🟠 Likely (46) |
+| `phish-bec-ceo-wire.eml` | ❌ Phish | BEC/CEO wire fraud - clean auth, no links, Reply-To redirect | 🟠 Likely (46) |
 | `phish-package-delivery.eml` | ❌ Phish | DHL impersonation, `bit.ly` shortener, punycode link, `.xyz` TLD | 🔴 High (121) |
 | `phish-prize-scam.eml` | ❌ Phish | Random sender domain + 'you are a winner' + Unicode-obfuscated subject | 🔴 High (75) |
 

@@ -1,4 +1,4 @@
-# Lab Results — Sample Corpus Triage
+# Lab Results - Sample Corpus Triage
 
 All messages below were generated for this lab (synthetic, safe, no real payloads) and analyzed with `python -m phishtriage batch samples -o reports`. Full per-message reports (Markdown/JSON/HTML) are in [`../reports/`](../reports).
 
@@ -18,7 +18,7 @@ All messages below were generated for this lab (synthetic, safe, no real payload
 
 ## Per-sample breakdown
 
-### 🔴 `phish-credential-harvest.eml` — High-Confidence Phishing (score 128)
+### 🔴 `phish-credential-harvest.eml` - High-Confidence Phishing (score 128)
 
 Microsoft 365 credential-harvesting lure. Sender `micros0ft.com` is a homoglyph of `microsoft.com`; the link text reads `login.microsoftonline.com` while the href points to `account-verify[.]ru`.
 
@@ -34,7 +34,7 @@ Microsoft 365 credential-harvesting lure. Sender `micros0ft.com` is a homoglyph 
 
 **ATT&CK techniques:** T1566, T1566.002, T1583.001, T1598.003, T1656
 
-### 🔴 `phish-package-delivery.eml` — High-Confidence Phishing (score 121)
+### 🔴 `phish-package-delivery.eml` - High-Confidence Phishing (score 121)
 
 DHL package-delivery lure: brand impersonation from a `.xyz` throwaway, a `bit.ly` shortener, and a punycode/IDN link.
 
@@ -51,9 +51,9 @@ DHL package-delivery lure: brand impersonation from a `.xyz` throwaway, a `bit.l
 
 **ATT&CK techniques:** T1036, T1566, T1566.002, T1583.001, T1656
 
-### 🔴 `phish-invoice-malware.eml` — High-Confidence Phishing (score 119)
+### 🔴 `phish-invoice-malware.eml` - High-Confidence Phishing (score 119)
 
-Invoice/payment-fraud lure delivering `Invoice_90871.pdf.iso` — a double extension hiding a disk-image payload (ISO smuggling that bypasses Mark-of-the-Web).
+Invoice/payment-fraud lure delivering `Invoice_90871.pdf.iso` - a double extension hiding a disk-image payload (ISO smuggling that bypasses Mark-of-the-Web).
 
 | Rule | Wt | ATT&CK | Detail |
 |------|:--:|:------:|--------|
@@ -67,7 +67,7 @@ Invoice/payment-fraud lure delivering `Invoice_90871.pdf.iso` — a double exten
 
 **ATT&CK techniques:** T1036.007, T1566, T1566.001, T1583.001, T1656
 
-### 🔴 `phish-prize-scam.eml` — High-Confidence Phishing (score 75)
+### 🔴 `phish-prize-scam.eml` - High-Confidence Phishing (score 75)
 
 Prize/reward scam modeled on a real sample. Algorithmically-generated sender domain, reward-scam language ('you are a winner'), and Unicode-obfuscated subject (math-bold letters) to dodge keyword filters.
 
@@ -81,9 +81,9 @@ Prize/reward scam modeled on a real sample. Algorithmically-generated sender dom
 
 **ATT&CK techniques:** T1036, T1566, T1566.002, T1583.001, T1656
 
-### 🟠 `phish-bec-ceo-wire.eml` — Likely Phishing (score 46)
+### 🟠 `phish-bec-ceo-wire.eml` - Likely Phishing (score 46)
 
-Business Email Compromise / CEO wire fraud — the hardest class to catch: authenticates cleanly (real Gmail), no links or attachments, caught on the Reply-To redirect plus financial-request language.
+Business Email Compromise / CEO wire fraud - the hardest class to catch: authenticates cleanly (real Gmail), no links or attachments, caught on the Reply-To redirect plus financial-request language.
 
 | Rule | Wt | ATT&CK | Detail |
 |------|:--:|:------:|--------|
@@ -94,14 +94,14 @@ Business Email Compromise / CEO wire fraud — the hardest class to catch: authe
 
 **ATT&CK techniques:** T1566, T1656
 
-### 🟢 `benign-internal-it.eml` — Benign (score 0)
+### 🟢 `benign-internal-it.eml` - Benign (score 0)
 
-Legitimate internal IT notice — fully aligned, no risky indicators.
+Legitimate internal IT notice - fully aligned, no risky indicators.
 
-_No suspicious indicators — clean._
+_No suspicious indicators - clean._
 
-### 🟢 `benign-newsletter.eml` — Benign (score 0)
+### 🟢 `benign-newsletter.eml` - Benign (score 0)
 
-Legitimate marketing newsletter — passes SPF/DKIM/DMARC, aligned domains, on-brand links.
+Legitimate marketing newsletter - passes SPF/DKIM/DMARC, aligned domains, on-brand links.
 
-_No suspicious indicators — clean._
+_No suspicious indicators - clean._

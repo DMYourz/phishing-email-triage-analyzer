@@ -6,9 +6,9 @@ This analyzer is **rules-as-data**: every signal lives in [`phishtriage/rules.ya
 
 | Score | Verdict | Analyst action |
 |-------|---------|----------------|
-| 0–14 | 🟢 Benign | Deliver; retain for baseline tuning |
-| 15–39 | 🟡 Suspicious | Review; banner/confirm sender out-of-band |
-| 40–74 | 🟠 Likely Phishing | Quarantine, warn recipient, hunt for copies |
+| 0-14 | 🟢 Benign | Deliver; retain for baseline tuning |
+| 15-39 | 🟡 Suspicious | Review; banner/confirm sender out-of-band |
+| 40-74 | 🟠 Likely Phishing | Quarantine, warn recipient, hunt for copies |
 | 75+ | 🔴 High-Confidence Phishing | Block, purge from mailboxes, open an incident |
 
 ## Detection rules (25)

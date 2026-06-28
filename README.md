@@ -12,19 +12,19 @@
 
 ## 📖 Overview
 
-This is a Python tool that automates the boring-but-critical first pass of phishing triage — the stuff a Tier-1 SOC analyst does dozens of times a day. Feed it a suspicious email and it parses the headers, checks sender authentication, hunts for look-alike domains and link trickery, sniffs out dangerous attachments, reads the social-engineering tells, and spits out a scored report mapped to MITRE ATT&CK.
+This is a Python tool that automates the boring-but-critical first pass of phishing triage - the stuff a Tier-1 SOC analyst does dozens of times a day. Feed it a suspicious email and it parses the headers, checks sender authentication, hunts for look-alike domains and link trickery, sniffs out dangerous attachments, reads the social-engineering tells, and spits out a scored report mapped to MITRE ATT&CK.
 
-It's **offline by default** — no message content ever leaves your machine, every result is deterministic, and there are no API keys to fumble with. Online reputation lookups are strictly opt-in.
+It's **offline by default** - no message content ever leaves your machine, every result is deterministic, and there are no API keys to fumble with. Online reputation lookups are strictly opt-in.
 
 I built this because "phishing triage" shows up on basically every SOC analyst job description, and I wanted something that proved I understand *why* an email is malicious, not just that a vendor box said so.
 
 **What it flags (and why it matters):**
 
-- **Spoofed senders** — SPF/DKIM/DMARC failures, Return-Path and Reply-To that don't line up with the From domain
-- **Look-alike domains** — homoglyphs (`micros0ft.com`), typosquats, punycode/IDN, and brand impersonation in the display name
-- **Link manipulation** — the visible text says `paypal.com` but the href goes to `account-verify[.]ru`, URL shorteners, raw-IP links, abuse-prone TLDs
-- **Dangerous attachments** — executables, double extensions (`Invoice.pdf.iso`), macro-enabled Office docs, HTML smuggling
-- **Social engineering** — urgency/pressure language and payment/wire/gift-card requests (the heart of BEC)
+- **Spoofed senders** - SPF/DKIM/DMARC failures, Return-Path and Reply-To that don't line up with the From domain
+- **Look-alike domains** - homoglyphs (`micros0ft.com`), typosquats, punycode/IDN, and brand impersonation in the display name
+- **Link manipulation** - the visible text says `paypal.com` but the href goes to `account-verify[.]ru`, URL shorteners, raw-IP links, abuse-prone TLDs
+- **Dangerous attachments** - executables, double extensions (`Invoice.pdf.iso`), macro-enabled Office docs, HTML smuggling
+- **Social engineering** - urgency/pressure language and payment/wire/gift-card requests (the heart of BEC)
 
 ---
 
@@ -61,7 +61,7 @@ The detection logic is **rules-as-data**: weights, severities, and ATT&CK techni
 
 ## 📊 Sample results
 
-Seven messages ship with the repo — two legitimate, five malicious across different attack styles. Running `python -m phishtriage batch samples` produces:
+Seven messages ship with the repo - two legitimate, five malicious across different attack styles. Running `python -m phishtriage batch samples` produces:
 
 | Sample | Score | Verdict | Technique demonstrated |
 |--------|:-----:|---------|------------------------|
@@ -73,7 +73,7 @@ Seven messages ship with the repo — two legitimate, five malicious across diff
 | `benign-internal-it.eml` | 0 | 🟢 Benign | Legitimate internal notice |
 | `benign-newsletter.eml` | 0 | 🟢 Benign | Legitimate marketing email |
 
-**2/2 benign messages scored 0 (no false positives); 5/5 phishing messages flagged** — including a BEC email that passes SPF/DKIM/DMARC and carries no links or attachments. Full write-up in [docs/FINDINGS.md](docs/FINDINGS.md).
+**2/2 benign messages scored 0 (no false positives); 5/5 phishing messages flagged** - including a BEC email that passes SPF/DKIM/DMARC and carries no links or attachments. Full write-up in [docs/FINDINGS.md](docs/FINDINGS.md).
 
 ---
 
@@ -90,7 +90,7 @@ python -m phishtriage analyze samples/phish-credential-harvest.eml
 python -m phishtriage batch samples -o reports
 ```
 
-No install needed to kick the tires — `pip install pyyaml` and `python -m phishtriage ...` works straight from the repo. Full instructions in [docs/SETUP.md](docs/SETUP.md).
+No install needed to kick the tires - `pip install pyyaml` and `python -m phishtriage ...` works straight from the repo. Full instructions in [docs/SETUP.md](docs/SETUP.md).
 
 ### Run it from anywhere (Windows)
 
@@ -149,7 +149,7 @@ phishing-email-triage-analyzer/
 │   ├── DETECTIONS.md    # every rule, weight, and ATT&CK mapping
 │   └── FINDINGS.md      # the lab results write-up
 ├── scan.bat · scan.ps1  # drag-and-drop launchers (run from anywhere)
-├── .github/workflows/ci.yml   # tests + lint on every push (Py 3.9–3.12)
+├── .github/workflows/ci.yml   # tests + lint on every push (Py 3.9-3.12)
 ├── pyproject.toml · Makefile · LICENSE · .gitignore
 ```
 
@@ -163,7 +163,7 @@ pytest -q          # 30 tests
 ruff check .       # lint
 ```
 
-The suite isn't just unit tests — the sample corpus is wired up as a **detection regression test**: if a rule change stops catching one of the known-phishing samples (or starts flagging a benign one), CI goes red. That's the same idea as true/false-positive testing in real detection engineering. GitHub Actions runs it across Python 3.9–3.12 on every push.
+The suite isn't just unit tests - the sample corpus is wired up as a **detection regression test**: if a rule change stops catching one of the known-phishing samples (or starts flagging a benign one), CI goes red. That's the same idea as true/false-positive testing in real detection engineering. GitHub Actions runs it across Python 3.9-3.12 on every push.
 
 ---
 
@@ -186,7 +186,7 @@ Findings map to techniques across the phishing kill chain, including:
 
 ## ⚠️ Ethical & safe-use note
 
-Everything in `samples/` is **synthetic** — I wrote these messages for the lab. The "malicious" attachment is a harmless text placeholder, not real malware, and every domain/IP is fake or RFC-5737 documentation space. Nothing here detonates payloads or contacts attacker infrastructure.
+Everything in `samples/` is **synthetic** - I wrote these messages for the lab. The "malicious" attachment is a harmless text placeholder, not real malware, and every domain/IP is fake or RFC-5737 documentation space. Nothing here detonates payloads or contacts attacker infrastructure.
 
 If you point this at real suspicious mail: do it on messages you're authorized to investigate, keep private evidence out of the repo (`.gitignore` already excludes `*.local.eml` and `private-samples/`), and remember that static triage is the *first* filter, not a verdict you should block production traffic on without enrichment.
 
@@ -194,4 +194,4 @@ If you point this at real suspicious mail: do it on messages you're authorized t
 
 ## 📄 License
 
-MIT — see [LICENSE](LICENSE). Built as part of my [CyberSecurity Portfolio](https://github.com/DMYourz/CyberSecurity-Portfolio).
+MIT - see [LICENSE](LICENSE). Built as part of my [CyberSecurity Portfolio](https://github.com/DMYourz/CyberSecurity-Portfolio).

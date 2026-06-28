@@ -20,3 +20,15 @@ private-samples/
 # User's private real email sample — keep local, never publish
 samples/spamemail.eml
 reports/spamemail.report.*
+
+# Reports: commit only the curated sample reports; ignore reports generated
+# from real/private emails the analyzer is run against.
+reports/*
+!reports/SUMMARY.md
+!reports/benign-internal-it.report.*
+!reports/benign-newsletter.report.*
+!reports/phish-bec-ceo-wire.report.*
+!reports/phish-credential-harvest.report.*
+!reports/phish-invoice-malware.report.*
+!reports/phish-package-delivery.report.*
+!reports/phish-prize-scam.report.*
