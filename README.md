@@ -61,7 +61,7 @@ The detection logic is **rules-as-data**: weights, severities, and ATT&CK techni
 
 ## 📊 Sample results
 
-Six messages ship with the repo — two legitimate, four malicious across different attack styles. Running `python -m phishtriage batch samples` produces:
+Seven messages ship with the repo — two legitimate, five malicious across different attack styles. Running `python -m phishtriage batch samples` produces:
 
 | Sample | Score | Verdict | Technique demonstrated |
 |--------|:-----:|---------|------------------------|
@@ -140,7 +140,7 @@ phishing-email-triage-analyzer/
 │   ├── report.py        # Markdown / JSON / HTML renderers
 │   ├── enrichment.py    # optional, opt-in online reputation lookups
 │   ├── cli.py           # `analyze` and `batch` commands
-│   └── rules.yaml       # 22 detection rules: weight + severity + ATT&CK
+│   └── rules.yaml       # 25 detection rules: weight + severity + ATT&CK
 ├── samples/             # 7 synthetic .eml files (2 benign, 5 phishing)
 ├── reports/             # generated triage reports (committed as evidence)
 ├── tests/               # 30 pytest tests incl. detection regression suite
