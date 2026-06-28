@@ -1,0 +1,39 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "phishtriage"
+version = "1.0.0"
+description = "Offline-first phishing email triage analyzer with MITRE ATT&CK mapping."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [{ name = "Daniel Mochkarovsky" }]
+keywords = ["phishing", "email-security", "soc", "blue-team", "dfir", "mitre-attack"]
+dependencies = ["PyYAML>=6.0"]
+
+[project.optional-dependencies]
+enrich = ["requests>=2.28", "dnspython>=2.3"]
+dev = ["pytest>=7.0", "ruff>=0.4"]
+
+[project.scripts]
+phishtriage = "phishtriage.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/DMYourz/phishing-email-triage-analyzer"
+Portfolio = "https://github.com/DMYourz/CyberSecurity-Portfolio"
+
+[tool.setuptools]
+packages = ["phishtriage"]
+
+[tool.setuptools.package-data]
+phishtriage = ["rules.yaml"]
+
+[tool.ruff]
+line-length = 110
+target-version = "py39"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I"]
+ignore = ["E501"]

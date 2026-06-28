@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.venv/
+venv/
+.pytest_cache/
+.ruff_cache/
+
+# Local secrets / enrichment keys - NEVER commit these
+.env
+*.key
+
+# Real/private email evidence - keep only sanitized lab samples in samples/
+private-samples/
+*.local.eml
+
+# User's private real email sample — keep local, never publish
+samples/spamemail.eml
+reports/spamemail.report.*

@@ -1,0 +1,2 @@
+# Core (required). Intentionally minimal so the analyzer runs offline anywhere.
+PyYAML>=6.0

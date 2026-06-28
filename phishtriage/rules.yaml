@@ -1,0 +1,132 @@
+# Detection rules for phishtriage.
+# Weights are tunable here (detection-as-data); detection logic lives in
+# scoring.py. `attack` references MITRE ATT&CK Enterprise technique IDs.
+#
+# Score bands -> verdict:
+#   0-14  Benign | 15-39 Suspicious | 40-74 Likely Phishing | 75+ High-Confidence Phishing
+
+spf_fail:
+  weight: 15
+  severity: medium
+  attack: "T1566"
+  description: "SPF failed: sending IP not authorised for the envelope domain."
+dkim_fail:
+  weight: 12
+  severity: medium
+  attack: "T1566"
+  description: "DKIM failed: message signature missing or invalid."
+dmarc_fail:
+  weight: 20
+  severity: high
+  attack: "T1566"
+  description: "DMARC failed: message not aligned/authenticated for the From domain."
+return_path_mismatch:
+  weight: 12
+  severity: medium
+  attack: "T1656"
+  description: "Return-Path domain does not align with the From domain."
+reply_to_mismatch:
+  weight: 18
+  severity: high
+  attack: "T1656"
+  description: "Reply-To redirects replies to a different domain than From (BEC tell)."
+display_name_impersonation:
+  weight: 22
+  severity: high
+  attack: "T1656"
+  description: "Display name impersonates a known brand the sender domain doesn't own."
+lookalike_sender_domain:
+  weight: 25
+  severity: high
+  attack: "T1583.001"
+  description: "Sender domain is a homoglyph/typosquat of a known brand domain."
+freemail_sender:
+  weight: 8
+  severity: low
+  attack: "T1566"
+  description: "Sender uses a free webmail provider (context for impersonation)."
+suspicious_sender_tld:
+  weight: 14
+  severity: medium
+  attack: "T1583.001"
+  description: "Sender domain uses a low-reputation / abuse-prone TLD."
+link_text_href_mismatch:
+  weight: 20
+  severity: high
+  attack: "T1566.002"
+  description: "Visible link text implies a different domain than the actual href."
+url_shortener:
+  weight: 12
+  severity: medium
+  attack: "T1566.002"
+  description: "Link uses a URL shortener, concealing the true destination."
+ip_literal_url:
+  weight: 18
+  severity: high
+  attack: "T1566.002"
+  description: "Link points directly to a raw IP address instead of a domain."
+punycode_url:
+  weight: 20
+  severity: high
+  attack: "T1036"
+  description: "Link uses punycode/IDN, a common homoglyph masquerading trick."
+suspicious_url_tld:
+  weight: 10
+  severity: low
+  attack: "T1566.002"
+  description: "Link uses a low-reputation / abuse-prone TLD."
+credential_keywords_with_link:
+  weight: 18
+  severity: high
+  attack: "T1598.003"
+  description: "Account/credential-verification language paired with an outbound link."
+urgency_language:
+  weight: 8
+  severity: low
+  attack: "T1566"
+  description: "Urgency / pressure language to provoke a hasty action."
+financial_request_language:
+  weight: 12
+  severity: medium
+  attack: "T1656"
+  description: "Payment/wire/gift-card request language (invoice fraud / BEC)."
+risky_attachment:
+  weight: 25
+  severity: high
+  attack: "T1566.001"
+  description: "Executable or otherwise dangerous attachment file type."
+double_extension_attachment:
+  weight: 25
+  severity: high
+  attack: "T1036.007"
+  description: "Attachment uses a double extension to disguise an executable."
+macro_office_attachment:
+  weight: 20
+  severity: high
+  attack: "T1204.002"
+  description: "Macro-enabled Office document (common malware delivery vector)."
+html_attachment:
+  weight: 12
+  severity: medium
+  attack: "T1027.006"
+  description: "HTML attachment (possible HTML smuggling or local credential page)."
+archive_attachment:
+  weight: 8
+  severity: low
+  attack: "T1566.001"
+  description: "Archive attachment that may conceal an executable payload."
+random_sender_domain:
+  weight: 22
+  severity: high
+  attack: "T1583.001"
+  description: "Sender domain looks algorithmically generated (throwaway/snowshoe)."
+reward_scam_language:
+  weight: 15
+  severity: medium
+  attack: "T1566"
+  description: "Prize/lottery/reward-scam language ('you are a winner', 'claim your prize')."
+unicode_obfuscation:
+  weight: 14
+  severity: medium
+  attack: "T1036"
+  description: "Subject/sender uses look-alike Unicode (math-bold/full-width) to evade filters."

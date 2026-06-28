@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Phishing Triage — ✅Re: 2nd attempt: You are a winner of a 𝐅𝐫𝐞𝐞 𝐆𝐢𝐟𝐭🎁</title>
+<style>
+  body{font-family:-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;margin:0;background:#f6f8fa;color:#1f2328}
+  .wrap{max-width:920px;margin:24px auto;padding:0 16px}
+  .card{background:#fff;border:1px solid #d0d7de;border-radius:10px;padding:20px;margin-bottom:16px}
+  .banner{border-left:8px solid #cf222e;padding:16px 20px}
+  .verdict{font-size:24px;font-weight:700;color:#cf222e}
+  .score{font-size:13px;color:#57606a}
+  table{border-collapse:collapse;width:100%;font-size:14px}
+  th,td{border:1px solid #d0d7de;padding:8px 10px;text-align:left;vertical-align:top}
+  th{background:#f6f8fa} td.c{text-align:center}
+  code{background:#eff1f3;padding:1px 5px;border-radius:5px;font-size:12px;word-break:break-all}
+  .sev{padding:2px 8px;border-radius:10px;color:#fff;font-size:12px;text-transform:capitalize}
+  .sev.high{background:#cf222e}.sev.medium{background:#bc4c00}.sev.low{background:#9a6700}
+  h2{font-size:15px;border-bottom:1px solid #d0d7de;padding-bottom:6px;margin-top:0}
+  .kv td:first-child{width:170px;color:#57606a;font-weight:600}
+</style></head><body><div class="wrap">
+<div class="card banner"><div class="verdict">🔴 High-Confidence Phishing</div>
+<div class="score">Risk score 75 · 5 findings · samples/phish-prize-scam.eml</div></div>
+<div class="card"><h2>Sender &amp; Authentication</h2><table class="kv">
+<tr><td>Display name</td><td>Rewards Center</td></tr>
+<tr><td>From address</td><td>promo@a7b3k9x2qz.us</td></tr>
+<tr><td>Reply-To</td><td>—</td></tr>
+<tr><td>Return-Path</td><td>return@9xk2tp.com</td></tr>
+<tr><td>Subject</td><td>✅Re: 2nd attempt: You are a winner of a 𝐅𝐫𝐞𝐞 𝐆𝐢𝐟𝐭🎁</td></tr>
+<tr><td>SPF / DKIM / DMARC</td><td><code>pass</code> / <code>none</code> / <code>none</code></td></tr>
+</table></div>
+<div class="card"><h2>Findings</h2><table>
+<tr><th>Severity</th><th>Rule</th><th>Weight</th><th>ATT&amp;CK</th><th>Detail</th></tr>
+<tr><td><span class='sev high'>high</span></td><td><code>random_sender_domain</code></td><td class='c'>22</td><td class='c'>T1583.001</td><td>Sender domain a7b3k9x2qz.us looks algorithmically generated</td></tr><tr><td><span class='sev medium'>medium</span></td><td><code>reward_scam_language</code></td><td class='c'>15</td><td class='c'>T1566</td><td>Prize/lottery/reward-scam language detected</td></tr><tr><td><span class='sev medium'>medium</span></td><td><code>unicode_obfuscation</code></td><td class='c'>14</td><td class='c'>T1036</td><td>Look-alike Unicode characters used in subject/sender to evade filters</td></tr><tr><td><span class='sev medium'>medium</span></td><td><code>return_path_mismatch</code></td><td class='c'>12</td><td class='c'>T1656</td><td>Return-Path domain 9xk2tp.com != From domain a7b3k9x2qz.us</td></tr><tr><td><span class='sev medium'>medium</span></td><td><code>url_shortener</code></td><td class='c'>12</td><td class='c'>T1566.002</td><td>Shortened link hides its destination: https://tinyurl.com/abc123xyz</td></tr></table></div>
+<div class="card"><h2>Recommended action</h2><p>Block sender + domains/URLs, purge from all mailboxes, and open an incident.</p></div>
+</div></body></html>

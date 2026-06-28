@@ -1,0 +1,109 @@
+{
+  "tool": "phishtriage",
+  "generated": "2026-06-28 22:03:31 UTC",
+  "file": "samples/phish-package-delivery.eml",
+  "verdict": "High-Confidence Phishing",
+  "score": 121,
+  "authentication": {
+    "spf": "fail",
+    "dkim": "none",
+    "dmarc": "fail"
+  },
+  "sender": {
+    "display_name": "DHL Express",
+    "address": "auto-notify@dhl-tracking-update.xyz",
+    "reply_to": [],
+    "return_path": "auto-notify@dhl-tracking-update.xyz"
+  },
+  "subject": "Your package is on hold - confirm delivery details",
+  "summary": {
+    "num_findings": 8,
+    "num_links": 2,
+    "num_attachments": 0,
+    "high": 3,
+    "medium": 3,
+    "low": 2,
+    "spf": "fail",
+    "dkim": "none",
+    "dmarc": "fail"
+  },
+  "findings": [
+    {
+      "rule_id": "spf_fail",
+      "detail": "Authentication-Results reports spf=fail",
+      "weight": 15,
+      "severity": "medium",
+      "attack": "T1566",
+      "description": "SPF failed: sending IP not authorised for the envelope domain."
+    },
+    {
+      "rule_id": "dmarc_fail",
+      "detail": "Authentication-Results reports dmarc=fail",
+      "weight": 20,
+      "severity": "high",
+      "attack": "T1566",
+      "description": "DMARC failed: message not aligned/authenticated for the From domain."
+    },
+    {
+      "rule_id": "display_name_impersonation",
+      "detail": "Display name 'DHL Express' cites 'dhl', but sender domain is dhl-tracking-update.xyz",
+      "weight": 22,
+      "severity": "high",
+      "attack": "T1656",
+      "description": "Display name impersonates a known brand the sender domain doesn't own."
+    },
+    {
+      "rule_id": "suspicious_sender_tld",
+      "detail": "Sender domain uses low-reputation TLD .xyz",
+      "weight": 14,
+      "severity": "medium",
+      "attack": "T1583.001",
+      "description": "Sender domain uses a low-reputation / abuse-prone TLD."
+    },
+    {
+      "rule_id": "url_shortener",
+      "detail": "Shortened link hides its destination: https://bit.ly/3xRpQk9",
+      "weight": 12,
+      "severity": "medium",
+      "attack": "T1566.002",
+      "description": "Link uses a URL shortener, concealing the true destination."
+    },
+    {
+      "rule_id": "punycode_url",
+      "detail": "Punycode/IDN link (possible homoglyph): http://xn--dhltracking-1ub.xyz/confirm",
+      "weight": 20,
+      "severity": "high",
+      "attack": "T1036",
+      "description": "Link uses punycode/IDN, a common homoglyph masquerading trick."
+    },
+    {
+      "rule_id": "suspicious_url_tld",
+      "detail": "Link uses low-reputation TLD .xyz: http://xn--dhltracking-1ub.xyz/confirm",
+      "weight": 10,
+      "severity": "low",
+      "attack": "T1566.002",
+      "description": "Link uses a low-reputation / abuse-prone TLD."
+    },
+    {
+      "rule_id": "urgency_language",
+      "detail": "Urgency / pressure language detected in the message body",
+      "weight": 8,
+      "severity": "low",
+      "attack": "T1566",
+      "description": "Urgency / pressure language to provoke a hasty action."
+    }
+  ],
+  "links": [
+    {
+      "url": "https://bit.ly/3xRpQk9",
+      "source": "href",
+      "anchor_text": "Confirm delivery"
+    },
+    {
+      "url": "http://xn--dhltracking-1ub.xyz/confirm",
+      "source": "body-text",
+      "anchor_text": ""
+    }
+  ],
+  "attachments": []
+}

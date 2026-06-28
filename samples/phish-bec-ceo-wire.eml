@@ -1,0 +1,28 @@
+Received: from mail-sor-f41.google.com (mail-sor-f41.google.com [209.85.220.41])
+	by mx.corp.example.com (Postfix) with ESMTPS id 7720CD
+	for <dan@corp.example.com>; Thu, 26 Jun 2026 09:05:12 -0400 (EDT)
+Authentication-Results: mx.corp.example.com;
+	spf=pass smtp.mailfrom=gmail.com;
+	dkim=pass header.d=gmail.com;
+	dmarc=pass header.from=gmail.com
+From: "Robert Chen" <robert.chen.ceo.office@gmail.com>
+Reply-To: accounting@secure-payments-portal.com
+Return-Path: <robert.chen.ceo.office@gmail.com>
+To: dan@corp.example.com
+Subject: Urgent - wire transfer needed before 2pm
+Date: Thu, 26 Jun 2026 09:05:10 -0400
+Message-ID: <CAF=8821ceo@mail.gmail.com>
+MIME-Version: 1.0
+Content-Type: text/plain; charset="utf-8"
+
+Dan,
+
+Are you at your desk? I'm tied up in meetings and need you to process an urgent
+wire transfer to a new vendor beneficiary as soon as possible. Please keep this
+confidential until it's done - I'll explain later. Reply here and I'll send the
+banking details and amount.
+
+Thanks,
+Robert Chen
+Chief Executive Officer
+Sent from my iPhone

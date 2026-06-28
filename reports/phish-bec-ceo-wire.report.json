@@ -1,0 +1,68 @@
+{
+  "tool": "phishtriage",
+  "generated": "2026-06-28 22:03:31 UTC",
+  "file": "samples/phish-bec-ceo-wire.eml",
+  "verdict": "Likely Phishing",
+  "score": 46,
+  "authentication": {
+    "spf": "pass",
+    "dkim": "pass",
+    "dmarc": "pass"
+  },
+  "sender": {
+    "display_name": "Robert Chen",
+    "address": "robert.chen.ceo.office@gmail.com",
+    "reply_to": [
+      "accounting@secure-payments-portal.com"
+    ],
+    "return_path": "robert.chen.ceo.office@gmail.com"
+  },
+  "subject": "Urgent - wire transfer needed before 2pm",
+  "summary": {
+    "num_findings": 4,
+    "num_links": 0,
+    "num_attachments": 0,
+    "high": 1,
+    "medium": 1,
+    "low": 2,
+    "spf": "pass",
+    "dkim": "pass",
+    "dmarc": "pass"
+  },
+  "findings": [
+    {
+      "rule_id": "reply_to_mismatch",
+      "detail": "Reply-To accounting@secure-payments-portal.com (secure-payments-portal.com) differs from From domain gmail.com",
+      "weight": 18,
+      "severity": "high",
+      "attack": "T1656",
+      "description": "Reply-To redirects replies to a different domain than From (BEC tell)."
+    },
+    {
+      "rule_id": "freemail_sender",
+      "detail": "Sender uses free webmail domain gmail.com",
+      "weight": 8,
+      "severity": "low",
+      "attack": "T1566",
+      "description": "Sender uses a free webmail provider (context for impersonation)."
+    },
+    {
+      "rule_id": "urgency_language",
+      "detail": "Urgency / pressure language detected in the message body",
+      "weight": 8,
+      "severity": "low",
+      "attack": "T1566",
+      "description": "Urgency / pressure language to provoke a hasty action."
+    },
+    {
+      "rule_id": "financial_request_language",
+      "detail": "Payment/wire/invoice request language detected",
+      "weight": 12,
+      "severity": "medium",
+      "attack": "T1656",
+      "description": "Payment/wire/gift-card request language (invoice fraud / BEC)."
+    }
+  ],
+  "links": [],
+  "attachments": []
+}

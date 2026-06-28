@@ -1,0 +1,39 @@
+{
+  "tool": "phishtriage",
+  "generated": "2026-06-28 22:03:31 UTC",
+  "file": "samples/benign-internal-it.eml",
+  "verdict": "Benign",
+  "score": 0,
+  "authentication": {
+    "spf": "pass",
+    "dkim": "pass",
+    "dmarc": "pass"
+  },
+  "sender": {
+    "display_name": "IT Service Desk",
+    "address": "it-helpdesk@corp.example.com",
+    "reply_to": [],
+    "return_path": "it-helpdesk@corp.example.com"
+  },
+  "subject": "Scheduled maintenance window this Saturday (no action needed)",
+  "summary": {
+    "num_findings": 0,
+    "num_links": 1,
+    "num_attachments": 0,
+    "high": 0,
+    "medium": 0,
+    "low": 0,
+    "spf": "pass",
+    "dkim": "pass",
+    "dmarc": "pass"
+  },
+  "findings": [],
+  "links": [
+    {
+      "url": "https://intranet.corp.example.com/it/maintenance",
+      "source": "body-text",
+      "anchor_text": ""
+    }
+  ],
+  "attachments": []
+}

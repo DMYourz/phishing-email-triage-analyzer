@@ -1,0 +1,46 @@
+{
+  "tool": "phishtriage",
+  "generated": "2026-06-28 22:03:31 UTC",
+  "file": "samples/benign-newsletter.eml",
+  "verdict": "Benign",
+  "score": 0,
+  "authentication": {
+    "spf": "pass",
+    "dkim": "pass",
+    "dmarc": "pass"
+  },
+  "sender": {
+    "display_name": "Acme Widgets",
+    "address": "newsletter@acmewidgets.com",
+    "reply_to": [
+      "support@acmewidgets.com"
+    ],
+    "return_path": "bounce@news.acmewidgets.com"
+  },
+  "subject": "Your June product updates from Acme Widgets",
+  "summary": {
+    "num_findings": 0,
+    "num_links": 2,
+    "num_attachments": 0,
+    "high": 0,
+    "medium": 0,
+    "low": 0,
+    "spf": "pass",
+    "dkim": "pass",
+    "dmarc": "pass"
+  },
+  "findings": [],
+  "links": [
+    {
+      "url": "https://www.acmewidgets.com/blog/june-updates",
+      "source": "href",
+      "anchor_text": "Read the full notes"
+    },
+    {
+      "url": "https://www.acmewidgets.com/blog/june-updates",
+      "source": "body-text",
+      "anchor_text": ""
+    }
+  ],
+  "attachments": []
+}

@@ -1,0 +1,39 @@
+Received: from mail.acmewidgets.com (mail.acmewidgets.com [203.0.113.24])
+	by mx.corp.example.com (Postfix) with ESMTPS id A1B2C3
+	for <dan@corp.example.com>; Tue, 24 Jun 2026 08:02:11 -0400 (EDT)
+Authentication-Results: mx.corp.example.com;
+	spf=pass smtp.mailfrom=news.acmewidgets.com;
+	dkim=pass header.d=acmewidgets.com;
+	dmarc=pass header.from=acmewidgets.com
+From: "Acme Widgets" <newsletter@acmewidgets.com>
+Reply-To: support@acmewidgets.com
+Return-Path: <bounce@news.acmewidgets.com>
+To: dan@corp.example.com
+Subject: Your June product updates from Acme Widgets
+Date: Tue, 24 Jun 2026 08:02:09 -0400
+Message-ID: <20260624.120209.7781@acmewidgets.com>
+List-Unsubscribe: <https://www.acmewidgets.com/unsubscribe?u=8821>
+MIME-Version: 1.0
+Content-Type: multipart/alternative; boundary="b_acme_1"
+
+--b_acme_1
+Content-Type: text/plain; charset="utf-8"
+
+Hi Dan,
+
+Here's what's new this month. Read the full notes on our blog:
+https://www.acmewidgets.com/blog/june-updates
+
+Thanks for being a customer.
+-- The Acme Widgets Team
+
+--b_acme_1
+Content-Type: text/html; charset="utf-8"
+
+<html><body>
+<p>Hi Dan,</p>
+<p>Here's what's new this month.
+<a href="https://www.acmewidgets.com/blog/june-updates">Read the full notes</a>.</p>
+<p>Thanks for being a customer.<br>-- The Acme Widgets Team</p>
+</body></html>
+--b_acme_1--

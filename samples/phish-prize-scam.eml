@@ -1,0 +1,23 @@
+Received: from unknown (198.51.100.77)
+	by mx.corp.example.com (Postfix) with ESMTP id PRZ001
+	for <dan@corp.example.com>; Sat, 28 Jun 2026 06:10:00 -0400 (EDT)
+Authentication-Results: mx.corp.example.com;
+	spf=pass smtp.mailfrom=a7b3k9x2qz.us;
+	dkim=none;
+	dmarc=none header.from=a7b3k9x2qz.us
+From: "Rewards Center" <promo@a7b3k9x2qz.us>
+Return-Path: <return@9xk2tp.com>
+To: dan@corp.example.com
+Subject: ✅Re: 2nd attempt: You are a winner of a 𝐅𝐫𝐞𝐞 𝐆𝐢𝐟𝐭🎁
+Date: Sat, 28 Jun 2026 06:09:58 -0400
+Message-ID: <prize-5521@a7b3k9x2qz.us>
+MIME-Version: 1.0
+Content-Type: text/html; charset="utf-8"
+
+<html><body>
+<p>Congratulations you have been selected!</p>
+<p>You are a winner of a brand new reward. Claim your prize now before it expires:
+<a href="https://tinyurl.com/abc123xyz">Claim now</a></p>
+<p>This is your 2nd attempt notification. Don't miss out!</p>
+<p>Rewards Center</p>
+</body></html>

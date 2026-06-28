@@ -1,0 +1,74 @@
+{
+  "tool": "phishtriage",
+  "generated": "2026-06-28 22:09:01 UTC",
+  "file": "C:\\Users\\Daniel\\Downloads\\\u2713 A new rate is here.eml",
+  "verdict": "Suspicious",
+  "score": 20,
+  "authentication": {
+    "spf": "pass",
+    "dkim": "pass",
+    "dmarc": "pass"
+  },
+  "sender": {
+    "display_name": "CheapServices brocklebankpenn",
+    "address": "brocklebankpenn@shop.brocklebankpenn.com",
+    "reply_to": [],
+    "return_path": "return@shop.brocklebankpenn.com"
+  },
+  "subject": "\u2713 A new rate is here                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                TXTLPGGJXHMXSNLFICSOKOSXWPHGVJDGEBAHIFWIPSNRLTXKYYDWTALSQEKDGPKYJHLJXDEXNVHKJCFBUQATAEMTYAVIXHWPIRZEIEJSEBBKZUDDLMCWLRPZYHGMODJOWTDGGZJWBTYUQXXPZULYHEBKBDNJFHEWVKGPFDKDSIJFBPWESWCCLSNOCTRNUTZQVKPOONCUDFVYIAGFOCZKPBEPLLBDPWACHVDDZCQKCJANSMEJJPBGHJITLKQKCOJWGOPZFYAYHPOLKKTDHEMKCLYFTXAAKKOQBREXLXIXIEWYTYCUGREEXPWGXVEONAPYHUEBHXTBLQETILBHHGTSEDLRRBVKUMXTKNOVQPXKYJVLDHAUVWOWVEKRESIQPQMFFMOFBVGNVGNXYEK                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |                 |   QQRNATMNBCCFKTYPURBDZDRVYEQWKVTNQBZNZXIHWEYJEVAVFYTPFVXXVGDRAAZHWFJAYNWPZZOIOVELPPOCZKHPKGMHDTLGBJWAYLEGCHJHZPDHIPHMCHMVRYOOGZMRSSQOEYBBKWFSBGKUGIXTYQMDWEMSTPGYINYJYEQZRKUTXUCXRHEZVXWOJDCWJKLPVHKPATVRXEPXAPWAEPXVXZZMCGUAIGKWSFIVMETXVPOJSEXPLWLEWTNWBFKSKXKRNWBVWKNTTBVKNSPTYJTMEXPOEFNCPGCZAGHJQCTPORTJQAXVXNINSLLGXCVPWYUGWDDVPNTYKVWOZONSYAWMZWJLNZKIBFOCCVQWYCIBNGFWBVCOBBDHXGWPJXICFCRCOQDZMPVTWCYTUCJHEOBIANASKCGHOVQNNDPMAHVNIEGQQQDYTUNZMABIOBHJJWAEGXULSBSQPZUGUADFBAFRKJMVGMLJOSCKMYIOCASULBVCGUQRLGOORVCLSGYNFZAY                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |              |",
+  "summary": {
+    "num_findings": 2,
+    "num_links": 3,
+    "num_attachments": 1,
+    "high": 0,
+    "medium": 1,
+    "low": 1,
+    "spf": "pass",
+    "dkim": "pass",
+    "dmarc": "pass"
+  },
+  "findings": [
+    {
+      "rule_id": "urgency_language",
+      "detail": "Urgency / pressure language detected in the message body",
+      "weight": 8,
+      "severity": "low",
+      "attack": "T1566",
+      "description": "Urgency / pressure language to provoke a hasty action."
+    },
+    {
+      "rule_id": "financial_request_language",
+      "detail": "Payment/wire/invoice request language detected",
+      "weight": 12,
+      "severity": "medium",
+      "attack": "T1656",
+      "description": "Payment/wire/gift-card request language (invoice fraud / BEC)."
+    }
+  ],
+  "links": [
+    {
+      "url": "http://shop.brocklebankpenn.com/rd70a.php?32=1o326a26e6a9aeb01_2ea4.1rhud26pd.A01tsr053db2wto7rb_1r3106.1a2fqdHg5N2MwcGw2NHEy0l39LZ",
+      "source": "href",
+      "anchor_text": ""
+    },
+    {
+      "url": "http://shop.brocklebankpenn.com/rd70a.php?32=1o326a26e6ac09091.1rhud26pd.A01tsr053db2wto7rb_1r3106.1a2fqdHg5N2MwcGw2NHEy0x697l",
+      "source": "href",
+      "anchor_text": ""
+    },
+    {
+      "url": "http://shop.brocklebankpenn.com/rd70a.php?32=1o326a26e6b01286f.1rhud26pd.A01tsr053db2wto7rb_1r3106.1a2fqdHg5N2MwcGw2NHEy0t59rh",
+      "source": "href",
+      "anchor_text": ""
+    }
+  ],
+  "attachments": [
+    {
+      "filename": "\ud83d\ude97\ud83d\ude97A U T O\ud83d\ude97\ud83d\ude97",
+      "content_type": "application/pdf",
+      "size": 3681,
+      "sha256": "b85ccdeb7c4060a794887b27de8145cdf092f88406f8e292cfdd254363f2501b",
+      "extension": ""
+    }
+  ]
+}

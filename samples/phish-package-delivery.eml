@@ -1,0 +1,23 @@
+Received: from unknown (193.42.33.18)
+	by mx.corp.example.com (Postfix) with ESMTP id 33LMN9
+	for <dan@corp.example.com>; Fri, 27 Jun 2026 11:22:40 -0400 (EDT)
+Authentication-Results: mx.corp.example.com;
+	spf=fail smtp.mailfrom=dhl-tracking-update.xyz;
+	dkim=none;
+	dmarc=fail header.from=dhl-tracking-update.xyz
+From: "DHL Express" <auto-notify@dhl-tracking-update.xyz>
+Return-Path: <auto-notify@dhl-tracking-update.xyz>
+To: dan@corp.example.com
+Subject: Your package is on hold - confirm delivery details
+Date: Fri, 27 Jun 2026 11:22:38 -0400
+Message-ID: <dhl-onhold-5521@dhl-tracking-update.xyz>
+MIME-Version: 1.0
+Content-Type: text/html; charset="utf-8"
+
+<html><body>
+<p>Your package is currently <b>on hold</b>. We were unable to complete delivery.</p>
+<p>Please confirm your delivery details to avoid return:
+<a href="https://bit.ly/3xRpQk9">Confirm delivery</a></p>
+<p>Or paste this link: http://xn--dhltracking-1ub.xyz/confirm</p>
+<p>DHL Express Customer Service</p>
+</body></html>

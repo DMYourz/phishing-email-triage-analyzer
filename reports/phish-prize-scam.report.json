@@ -1,0 +1,80 @@
+{
+  "tool": "phishtriage",
+  "generated": "2026-06-28 22:03:31 UTC",
+  "file": "samples/phish-prize-scam.eml",
+  "verdict": "High-Confidence Phishing",
+  "score": 75,
+  "authentication": {
+    "spf": "pass",
+    "dkim": "none",
+    "dmarc": "none"
+  },
+  "sender": {
+    "display_name": "Rewards Center",
+    "address": "promo@a7b3k9x2qz.us",
+    "reply_to": [],
+    "return_path": "return@9xk2tp.com"
+  },
+  "subject": "\u2705Re: 2nd attempt: You are a winner of a \ud835\udc05\ud835\udc2b\ud835\udc1e\ud835\udc1e \ud835\udc06\ud835\udc22\ud835\udc1f\ud835\udc2d\ud83c\udf81",
+  "summary": {
+    "num_findings": 5,
+    "num_links": 1,
+    "num_attachments": 0,
+    "high": 1,
+    "medium": 4,
+    "low": 0,
+    "spf": "pass",
+    "dkim": "none",
+    "dmarc": "none"
+  },
+  "findings": [
+    {
+      "rule_id": "return_path_mismatch",
+      "detail": "Return-Path domain 9xk2tp.com != From domain a7b3k9x2qz.us",
+      "weight": 12,
+      "severity": "medium",
+      "attack": "T1656",
+      "description": "Return-Path domain does not align with the From domain."
+    },
+    {
+      "rule_id": "random_sender_domain",
+      "detail": "Sender domain a7b3k9x2qz.us looks algorithmically generated",
+      "weight": 22,
+      "severity": "high",
+      "attack": "T1583.001",
+      "description": "Sender domain looks algorithmically generated (throwaway/snowshoe)."
+    },
+    {
+      "rule_id": "url_shortener",
+      "detail": "Shortened link hides its destination: https://tinyurl.com/abc123xyz",
+      "weight": 12,
+      "severity": "medium",
+      "attack": "T1566.002",
+      "description": "Link uses a URL shortener, concealing the true destination."
+    },
+    {
+      "rule_id": "reward_scam_language",
+      "detail": "Prize/lottery/reward-scam language detected",
+      "weight": 15,
+      "severity": "medium",
+      "attack": "T1566",
+      "description": "Prize/lottery/reward-scam language ('you are a winner', 'claim your prize')."
+    },
+    {
+      "rule_id": "unicode_obfuscation",
+      "detail": "Look-alike Unicode characters used in subject/sender to evade filters",
+      "weight": 14,
+      "severity": "medium",
+      "attack": "T1036",
+      "description": "Subject/sender uses look-alike Unicode (math-bold/full-width) to evade filters."
+    }
+  ],
+  "links": [
+    {
+      "url": "https://tinyurl.com/abc123xyz",
+      "source": "href",
+      "anchor_text": "Claim now"
+    }
+  ],
+  "attachments": []
+}

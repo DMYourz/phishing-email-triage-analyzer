@@ -1,0 +1,25 @@
+Received: from smtp.corp.example.com (smtp.corp.example.com [10.4.0.12])
+	by mx.corp.example.com (Postfix) with ESMTPS id D4E5F6
+	for <all-staff@corp.example.com>; Mon, 23 Jun 2026 17:31:54 -0400 (EDT)
+Authentication-Results: mx.corp.example.com;
+	spf=pass smtp.mailfrom=corp.example.com;
+	dkim=pass header.d=corp.example.com;
+	dmarc=pass header.from=corp.example.com
+From: "IT Service Desk" <it-helpdesk@corp.example.com>
+Return-Path: <it-helpdesk@corp.example.com>
+To: all-staff@corp.example.com
+Subject: Scheduled maintenance window this Saturday (no action needed)
+Date: Mon, 23 Jun 2026 17:31:50 -0400
+Message-ID: <2026-0623-maint-0098@corp.example.com>
+MIME-Version: 1.0
+Content-Type: text/plain; charset="utf-8"
+
+Team,
+
+We'll be performing routine maintenance on the internal file server this
+Saturday from 7-9pm. No action is needed on your part; systems may be briefly
+unavailable during the window. Details are on the intranet:
+https://intranet.corp.example.com/it/maintenance
+
+Thanks,
+IT Service Desk
